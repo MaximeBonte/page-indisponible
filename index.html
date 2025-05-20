@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terra Academia – Informations à venir</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rose-dragee: #FFBCD5;
+      --jaune-safran: #FFD82D;
+      --terra-cotta: #CF7852;
+      --rouge-corail: #FA5450;
+      --bleu-nuit: #04203A;
+      --vert-foret: #0F7D37;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Rubik', sans-serif;
+      background: linear-gradient(135deg, var(--bleu-nuit), var(--vert-foret));
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    header img {
+      max-width: 200px;
+      margin-bottom: 2rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-bottom: 2rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .contact {
+      background-color: var(--rose-dragee);
+      color: var(--bleu-nuit);
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .contact:hover {
+      background-color: var(--jaune-safran);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+        padding: 0 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src='/Users/maximebonte/Library/CloudStorage/GoogleDrive-mbonte.learning@gmail.com/Mon Drive/Terra Academia - kit TE/Production du Kit TE/logo/Logo fond transparent.png' alt="Logo Terra Academia" />
+  </header>
+  <main>
+    <h1>Contenus à venir</h1>
+    <p>Les informations concernant les formations et les entreprises qui recrutent dans la région seront bientôt disponibles.</p>
+    <p>Pour toute demande, n'hésitez pas à contacter l'équipe de Terra Academia.</p>
+    <a class="contact" href="mailto:campus.artois@terra-academia.org">Contactez-nous</a>
+  </main>
+</body>
+</html>
