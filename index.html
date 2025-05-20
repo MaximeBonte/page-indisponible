@@ -4,91 +4,163 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Terra Academia – Informations à venir</title>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --rose-dragee: #FFBCD5;
-      --jaune-safran: #FFD82D;
-      --terra-cotta: #CF7852;
-      --rouge-corail: #FA5450;
-      --bleu-nuit: #04203A;
-      --vert-foret: #0F7D37;
+      --bleu: #18a0ff;
+      --vert-foncé: #0f7d37;
+      --fond: #fefcf8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      margin: 0;
       font-family: 'Rubik', sans-serif;
-      background: linear-gradient(135deg, var(--bleu-nuit), var(--vert-foret));
-      color: white;
+      background-color: var(--fond);
+      color: #04203a;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      text-align: center;
-      overflow: hidden;
+      min-height: 100vh;
+      padding: 2rem;
+      overflow-x: hidden;
+      animation: fadeInBody 1s ease-in;
     }
 
     header img {
-      max-width: 200px;
+      max-width: 180px;
       margin-bottom: 2rem;
-      animation: fadeIn 2s ease-in-out;
+      animation: slideFade 1.2s ease-out forwards;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      max-width: 1200px;
+      animation: fadeInBody 1.2s ease;
+    }
+
+    .image-wrapper {
+      flex: 1 1 400px;
+      max-width: 600px;
+      animation: popImage 1.3s ease;
+    }
+
+    .image-wrapper img {
+      width: 100%;
+      border-radius: 16px;
+    }
+
+    .text-wrapper {
+      flex: 1 1 400px;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      animation: slideFade 1.5s ease;
     }
 
     h1 {
       font-size: 2rem;
-      margin-bottom: 1rem;
-      animation: fadeIn 2s ease-in-out;
+      line-height: 1.4;
+    }
+
+    .highlight {
+      background-color: var(--vert-foncé);
+      color: white;
+      border-radius: 0.6rem;
+      padding: 0 0.4rem;
+      display: inline-block;
     }
 
     p {
       font-size: 1.2rem;
-      max-width: 600px;
-      margin-bottom: 2rem;
-      animation: fadeIn 2s ease-in-out;
+      line-height: 1.6;
     }
 
-    .contact {
-      background-color: var(--rose-dragee);
-      color: var(--bleu-nuit);
-      padding: 1rem 2rem;
+    .button {
+      background-color: var(--bleu);
+      color: white;
+      border: none;
       border-radius: 8px;
-      text-decoration: none;
+      padding: 1rem 2rem;
       font-weight: bold;
-      transition: background-color 0.3s ease;
-      animation: fadeIn 2s ease-in-out;
+      font-size: 1rem;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: fit-content;
+      align-self: flex-start;
+      box-shadow: 0 8px 15px rgba(24, 160, 255, 0.2);
     }
 
-    .contact:hover {
-      background-color: var(--jaune-safran);
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 20px rgba(24, 160, 255, 0.3);
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes fadeInBody {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 1.5rem;
+    @keyframes slideFade {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
       }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-      p {
-        font-size: 1rem;
-        padding: 0 1rem;
+    @keyframes popImage {
+      from {
+        transform: scale(0.96);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .button {
+        align-self: center;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src='/Users/maximebonte/Library/CloudStorage/GoogleDrive-mbonte.learning@gmail.com/Mon Drive/Terra Academia - kit TE/Production du Kit TE/logo/Logo fond transparent.png' alt="Logo Terra Academia" />
+    <img src="file:///Users/maximebonte/Library/CloudStorage/GoogleDrive-mbonte.learning@gmail.com/Mon%20Drive/Terra%20Academia%20-%20kit%20TE/Production%20du%20Kit%20TE/logo/Logo%20fond%20transparent.png" alt="Logo Terra Academia" />
   </header>
-  <main>
-    <h1>Contenus à venir</h1>
-    <p>Les informations concernant les formations et les entreprises qui recrutent dans la région seront bientôt disponibles.</p>
-    <p>Pour toute demande, n'hésitez pas à contacter l'équipe de Terra Academia.</p>
-    <a class="contact" href="mailto:campus.artois@terra-academia.org">Contactez-nous</a>
-  </main>
+  <div class="container">
+    <div class="image-wrapper">
+      <img src="group-photo.jpg" alt="Apprenants autour d'une machine" />
+    </div>
+    <div class="text-wrapper">
+      <h1>
+        Les <span class="highlight">formations</span> et les <span class="highlight">entreprises</span> de la région engagées pour la transformation écologique seront bientôt disponibles.
+      </h1>
+      <p>Pour en savoir plus, contactez l’équipe de Terra Academia à Arras.</p>
+      <a class="button" href="mailto:campus.artois@terra-academia.org">Nous contacter</a>
+    </div>
+  </div>
 </body>
 </html>
